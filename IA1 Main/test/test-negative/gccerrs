@@ -1,0 +1,4 @@
+test-negative/gen.c:4:6: warning: explicitly assigning value of variable of type 'double' to itself [-Wself-assign]
+x=0;x=x;
+    ~^~
+1 warning generated.
