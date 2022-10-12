@@ -61,6 +61,16 @@ public class Parser {
 	}
 
 	private NodeTerm parseTerm() throws SyntaxException {
+		if(curr().equals(new Token("-"))){
+			NodeFactNum negFactor= new NodeFactNum("-1");
+			NodeMulop negateOp = new NodeMulop(scanner.pos(),"*");
+			NodeTerm finNodeTerm = new NodeTerm(negFactor, negateOp, null);
+			match("-");
+			NodeTerm term = parseTerm();
+			term.append(finNodeTerm);
+			return term;
+		}
+
 		NodeFact fact = parseFact();
 		NodeMulop mulop = parseMulop();
 		if (mulop == null)

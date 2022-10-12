@@ -1,3 +1,7 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
 import java.io.*;
 
 public class Code {

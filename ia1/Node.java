@@ -1,3 +1,7 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
 // This class, and its subclasses,
 // collectively model parse-tree nodes.
 // Each kind of node can be eval()-uated,
@@ -7,7 +11,7 @@ public abstract class Node {
 
 	protected int pos=0;
 
-	public int eval(Environment env) throws EvalException {
+	public double eval(Environment env) throws EvalException {
 		throw new EvalException(pos,"cannot eval() node!");
 	}
 

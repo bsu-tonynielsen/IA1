@@ -1,3 +1,7 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
 public class EvalException extends Exception {
 
 	private int pos;

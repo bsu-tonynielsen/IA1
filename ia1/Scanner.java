@@ -16,6 +16,7 @@ public class Scanner {
 	private Set<String> legits=new HashSet<String>();
 	private Set<String> keywords=new HashSet<String>();
 	private Set<String> operators=new HashSet<String>();
+	private Set<String> comments=new HashSet<String>();
 
 	// initializers for previous sets
 
@@ -58,6 +59,10 @@ public class Scanner {
 	private void initKeywords(Set<String> s) {
 	}
 
+	private void initComments(Set<String> s) {
+		s.add("#"); // single line comment
+	}
+
 	// constructor:
 	//     - squirrel-away source program
 	//     - initialize sets
@@ -71,6 +76,7 @@ public class Scanner {
 		initLegits(legits);
 		initKeywords(keywords);
 		initOperators(operators);
+		initComments(comments);
 	}
 
 	// handy string-processing methods
@@ -131,6 +137,14 @@ public class Scanner {
 		token=new Token(lexeme); // one-char operator
 	}
 
+	private void nextComment() {
+		while(!done() && program.charAt((pos+1)) != '#'){
+			pos++;
+		}
+		pos = pos+2;
+		next();
+	}
+
 	// This method determines the kind of the next token (e.g., "id"),
 	// and calls a method to scan that token's lexeme (e.g., "foo").
 	public boolean next() {
@@ -140,6 +154,8 @@ public class Scanner {
 			return false;
 		}
 		String c=program.charAt(pos)+"";
+		if (comments.contains(c))
+			nextComment();
 		if (digits.contains(c))
 			nextNumber();
 		else if (letters.contains(c))

@@ -6,13 +6,9 @@ public class NodeWr extends Node {
 		this.expr=expr;
 	}
 
-	public int eval(Environment env) throws EvalException {
-		int d=expr.eval(env);
-		int i=(int) d;
-		if (i==d)
-			System.out.println(i);
-		else
-			System.out.println(d);
+	public double eval(Environment env) throws EvalException {
+		double d=expr.eval(env);
+		System.out.println(d);
 		return d;
 	}
 

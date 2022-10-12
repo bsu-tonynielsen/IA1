@@ -1,3 +1,7 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
 // This is the main class/method for the interpreter/compiler.
 // Each command-line argument is a complete program,
 // which is scanned, parsed, and evaluated.

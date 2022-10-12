@@ -1,3 +1,7 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
 public class NodeAddop extends Node {
 
 	private String addop;
@@ -7,7 +11,7 @@ public class NodeAddop extends Node {
 		this.addop=addop;
 	}
 
-	public int op(int o1, int o2) throws EvalException {
+	public double op(double o1, double o2) throws EvalException {
 		if (addop.equals("+"))
 			return o1+o2;
 		if (addop.equals("-"))

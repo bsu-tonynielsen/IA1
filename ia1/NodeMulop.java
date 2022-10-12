@@ -7,11 +7,11 @@ public class NodeMulop extends Node {
 		this.mulop=mulop;
 	}
 
-	public int op(int o1, int o2) throws EvalException {
+	public double op(double d, double e) throws EvalException {
 		if (mulop.equals("*"))
-			return o1*o2;
+			return d*e;
 		if (mulop.equals("/"))
-			return o1/o2;
+			return d/e;
 		throw new EvalException(pos,"bogus mulop: "+mulop);
 	}
 
