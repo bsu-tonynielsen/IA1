@@ -2,6 +2,9 @@
 // CS 354 - IA1
 // 10-11-2022
 
+import java.util.Hashtable;
+import java.util.Set;
+
 // This class provides a stubbed-out environment.
 // You are expected to implement the methods.
 // Accessing an undefined variable should throw an exception.
@@ -16,14 +19,19 @@
 //   https://www.tutorialspoint.com/java/java_map_interface.htm
 //   http://www.javatpoint.com/java-map
 // and elsewhere.
-import java.util.Hashtable;
-import java.util.Set;
-
 public class Environment {
 
 	private Hashtable<String, Double> variables = new Hashtable<String, Double>();
 	private Set<String> keySet = variables.keySet();
 
+	/**
+	 * Puts var and val within a single hashtable or updates the value
+	 * if already within hashtable
+	 * 
+	 * @param var
+	 * @param val 
+	 * @return - double val given
+	 */
 	public double put(String var, double val) {
 		if (variables.containsKey(var)) {
 			variables.remove(var);
@@ -32,6 +40,11 @@ public class Environment {
 		return val;
 	}
 
+	/**
+	 * @param pos
+	 * @param var
+	 * @return - if var is already present return val otherwise return pos given
+	 */
 	public double get(int pos, String var) throws EvalException {
 		if (variables.containsKey(var))
 			return variables.get(var);
@@ -39,6 +52,9 @@ public class Environment {
 		return pos;
 	}
 
+	/**
+	 * @return - declaration of variables within C code
+	 */
 	public String toC() {
 		String s = "";
 		String sep = " ";

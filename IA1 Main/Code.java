@@ -4,18 +4,33 @@
 
 import java.io.*;
 
+/*
+ * Creates a C file from a inputed program.
+ */
 public class Code {
 
+	/**
+	 * @return - the start of the assembled C code
+	 */
 	private final String[] prologue={
 		"#include <stdio.h>",
 		"int main() {",
 	};
 
+	/**
+	 * @return - the end of the assembled C code
+	 */
 	private final String[] epilogue={
 		"return 0;",
 		"}",
 	};
 
+	/**
+	 * Creates the C file and then populates it with translated C code.
+	 * 
+	 * @param env
+	 * @param code
+	 */
 	public Code(String code, Environment env) {
 		String fn=System.getenv("Code");
 		if (fn==null)
