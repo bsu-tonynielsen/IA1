@@ -1,8 +1,11 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
 // This class is a recursive-descent parser,
 // modeled after the programming language's grammar.
 // It constructs and has-a Scanner for the program
 // being parsed.
-
 public class Parser {
 
 	private Scanner scanner;

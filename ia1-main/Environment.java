@@ -30,7 +30,7 @@ public class Environment {
 	 * 
 	 * @param var
 	 * @param val 
-	 * @return - double val given
+	 * @return - val double
 	 */
 	public double put(String var, double val) {
 		if (variables.containsKey(var)) {

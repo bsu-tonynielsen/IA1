@@ -1,3 +1,10 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
+/*
+ * Currently unused
+ */
 public class NodeWr extends Node {
 
 	private NodeExpr expr;

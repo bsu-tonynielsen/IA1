@@ -1,3 +1,10 @@
+// Tony Nielsen
+// CS 354 - IA1
+// 10-11-2022
+
+/*
+ * Currently unused
+ */
 public class NodeFactNum extends NodeFact {
 
 	private String num;
